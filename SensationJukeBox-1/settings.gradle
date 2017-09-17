@@ -1,0 +1,1 @@
+include ':app', ':YouTubeAndroidPlayerApi', ':jsoup-1.10.3'
