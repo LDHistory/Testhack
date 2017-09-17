@@ -52,9 +52,7 @@ public class TopActivity extends AppCompatActivity{
     public void connect(){
         top3_music = new String[3];
 
-        new RemoteDBManagerAsync().execute("http://45.76.100.46/select_top3.php", "zone", "zone1", "top_rank", "3");
-
-        Log.d("test", top3_music[0] + top3_music[1] + top3_music[2]);
+        new RemoteDBManagerAsync().execute("http://45.76.100.46/select_top3.php", "zone", "zone2", "top_rank", "3");
     }
 
     class RemoteDBManagerAsync extends AsyncTask<String, Void, String>
@@ -77,6 +75,7 @@ public class TopActivity extends AppCompatActivity{
                     String musicName = jObject.getString("music_name");
                     top3_music[i] = musicName;
                 }
+                Log.d("test", top3_music[0] + top3_music[1] + top3_music[2]);
             }
 
             catch (JSONException e)
