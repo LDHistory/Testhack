@@ -123,7 +123,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         CircleOptions circle1KM = new CircleOptions().center(position) //원점
                 .radius(50)      //반지름 단위 : m
                 .strokeWidth(0f)  //선너비 0f : 선없음
-                .fillColor(Color.parseColor("#880000ff")); //배경색
+                .fillColor(Color.parseColor("#88ff99cc")); //배경색
 
         //마커추가
         this.mMap.addMarker(mymarker);
@@ -171,7 +171,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         CircleOptions circle1KM = new CircleOptions().center(position) //원점
                 .radius(50)      //반지름 단위 : m
                 .strokeWidth(0f)  //선너비 0f : 선없음
-                .fillColor(Color.parseColor("#880000ff")); //배경색
+                .fillColor(Color.parseColor("#88ffffcc")); //배경색
 
         //마커추가
         this.mMap.addMarker(mymarker);
