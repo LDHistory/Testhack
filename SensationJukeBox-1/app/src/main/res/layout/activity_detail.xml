@@ -112,7 +112,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:id="@+id/storyContent"
-                        android:textColor="@color/colorBase"/>
+                        android:textColor="#ffffff"/>
                 </LinearLayout>
 
                 <LinearLayout
