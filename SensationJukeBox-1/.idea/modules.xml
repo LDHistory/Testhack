@@ -4,10 +4,14 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SensationJukeBox.iml" filepath="$PROJECT_DIR$/SensationJukeBox.iml" />
       <module fileurl="file://$PROJECT_DIR$/SensationJukeBox-1.iml" filepath="$PROJECT_DIR$/SensationJukeBox-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SensationJukeBox-1.iml" filepath="$PROJECT_DIR$/SensationJukeBox-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/YouTubeAndroidPlayerApi/YouTubeAndroidPlayerApi.iml" filepath="$PROJECT_DIR$/YouTubeAndroidPlayerApi/YouTubeAndroidPlayerApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/YouTubeAndroidPlayerApi/YouTubeAndroidPlayerApi.iml" filepath="$PROJECT_DIR$/YouTubeAndroidPlayerApi/YouTubeAndroidPlayerApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/YouTubeAndroidPlayerApi/YouTubeAndroidPlayerApi.iml" filepath="$PROJECT_DIR$/YouTubeAndroidPlayerApi/YouTubeAndroidPlayerApi.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jsoup-1.10.3/jsoup-1.10.3.iml" filepath="$PROJECT_DIR$/jsoup-1.10.3/jsoup-1.10.3.iml" />
       <module fileurl="file://$PROJECT_DIR$/jsoup-1.10.3/jsoup-1.10.3.iml" filepath="$PROJECT_DIR$/jsoup-1.10.3/jsoup-1.10.3.iml" />
       <module fileurl="file://$PROJECT_DIR$/jsoup-1.10.3/jsoup-1.10.3.iml" filepath="$PROJECT_DIR$/jsoup-1.10.3/jsoup-1.10.3.iml" />
     </modules>

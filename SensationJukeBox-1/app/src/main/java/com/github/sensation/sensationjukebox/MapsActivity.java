@@ -161,7 +161,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     //마커 , 원추가(location 2)
     public void onAddMarker2() {
-        LatLng position = new LatLng(latitude + 0.005, longitude + 0.005);
+        LatLng position = new LatLng(latitude + 0.0005, longitude + 0.0005);
 
         //나의위치 마커
         MarkerOptions mymarker = new MarkerOptions()
@@ -262,11 +262,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(userlatitude, userlongitude), 18));
         if (distance(userlatitude, userlongitude, latitude, longitude) <= 50 &&
                 distance(userlatitude, userlongitude, latitude, longitude) >= -50) {
-            textcontent.setText("강촌 TOP3 사연");
+            textcontent.setText("강촌 수련원 TOP3 사연");
             connect("zone1");
+        } else if(distance(userlatitude, userlongitude, latitude + 0.0005, longitude + 0.0005) <= 50 &&
+                distance(userlatitude, userlongitude, latitude + 0.0005, longitude + 0.0005) >= -50) {
+            textcontent.setText("강총 수련원 입구 TOP3 사연");
+            connect("zone2");
         } else {
             textcontent.setText("전국 TOP3 사연");
-            connect("zone2");
+            connect("zone3");
         }
     }
 

@@ -41,10 +41,11 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
-                android:background="#53dcaa"
+                android:background="#000000"
                 android:id="@+id/layoutDetail"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:alpha="0.8"
                 android:visibility="gone"
                 android:padding="5dp"
                 android:orientation="vertical">
@@ -58,14 +59,14 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="사연 제목:"
-                        android:textColor="@color/colorBase"/>
+                        android:textColor="#ffffff"/>
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="5"
                         android:layout_height="match_parent"
                         android:id="@+id/storyTitle"
                         android:gravity="center"
-                        android:textColor="@color/colorBase"/>
+                        android:textColor="#ffffff"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -78,14 +79,14 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="노래 제목:"
-                        android:textColor="@color/colorBase"/>
+                        android:textColor="#ffffff"/>
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="5"
                         android:layout_height="match_parent"
                         android:id="@+id/songTitle"
                         android:gravity="center"
-                        android:textColor="@color/colorBase"/>
+                        android:textColor="#ffffff"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -98,7 +99,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="사연 내용:"
-                        android:textColor="@color/colorBase"/>
+                        android:textColor="#ffffff"/>
                     <TextView
                         android:layout_width="0dp"
                         android:layout_weight="5"
