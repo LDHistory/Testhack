@@ -111,7 +111,7 @@ public class ListDetail extends AppCompatActivity {
             //Log.e("노래", fields[count].getName());
             if (fields[count].getName().toString().contains("music1")) {
                 music1 = Uri.parse("android.resource://" + getPackageName() + "/raw/" + fields[count].getName());
-            } else if (fields[count].getName().toString().contains("music2")) {
+            } else if (fields[count].getName().toString().contains("music3")) {
                 music3 = Uri.parse("android.resource://" + getPackageName() + "/raw/" + fields[count].getName());
             }
         }
