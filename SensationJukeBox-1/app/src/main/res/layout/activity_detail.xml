@@ -7,6 +7,10 @@
     <AbsoluteLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/swipe_layout">
             <ListView
                 android:layout_y="288px"
                 android:id="@+id/detail_listView"
@@ -14,6 +18,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0.1">
             </ListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
     </AbsoluteLayout>
         <LinearLayout
             android:layout_width="match_parent"

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.StrictMode;
 import android.support.annotation.RequiresApi;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -78,9 +79,10 @@ public class ListDetail extends AppCompatActivity {
     private static String jsontext = null;
     private int jsoncount = 0;
     static StoryItem saveStoryItem = new StoryItem();
-
+    private SwipeRefreshLayout swipeContainer;
     MapsActivity maps;
-
+    Uri music1;
+    Uri music3;
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,17 +103,10 @@ public class ListDetail extends AppCompatActivity {
         location1 = new String[100];
         location2 = new String[100];
         maps = new MapsActivity();
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
-        seekBar.getProgressDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
-        seekBar.getThumb().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
-
         //-------임시로 데이터 만듬---------노래 임의로 때려박고 리스트에 값 추가한 작업.
         Field[] fields = R.raw.class.getFields();
-        Uri music1 = null;
-        Uri music3 = null;
+        music1 = null;
+        music3 = null;
         for (int count = 0; count < fields.length; count++) {
             //Log.e("노래", fields[count].getName());
             if (fields[count].getName().toString().contains("music1")) {
@@ -120,6 +115,65 @@ public class ListDetail extends AppCompatActivity {
                 music3 = Uri.parse("android.resource://" + getPackageName() + "/raw/" + fields[count].getName());
             }
         }
+        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipe_layout);
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                updateMetaInfo();
+
+                if (jsontext != null) {
+                    try {
+                        JSONArray jsonArray = new JSONArray(jsontext);
+                        Log.d("test", jsontext);
+                        jsoncount = jsonArray.length();
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            storysub[i] = jsonArray.getJSONObject(i).getString("story_subject");
+                            storycontent[i] = jsonArray.getJSONObject(i).getString("story_content");
+                            musicname[i] = jsonArray.getJSONObject(i).getString("music_name");
+                            location1[i] = jsonArray.getJSONObject(i).getString("location1");
+                            location2[i] = jsonArray.getJSONObject(i).getString("location2");
+                            Log.d("test", "" + storysub[i] + storycontent[i] + musicname[i] + location1[i] + location2[i]);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                storyItemArrayList = new ArrayList<StoryItem>();
+
+                for(int userlist = 0; userlist < jsoncount; userlist++){
+                    StoryItem storyItem = new StoryItem();
+                    storyItem.setSongName(String.valueOf(musicname[userlist]));
+                    storyItem.setStoryTitle(String.valueOf(storysub[userlist]));
+                    storyItem.setStoryContent(String.valueOf(storycontent[userlist]));
+                    if (userlist == 2) {
+                        storyItem.setUri(music3);
+                    } else if (userlist == 0) {
+                        storyItem.setUri(music1);
+                    }
+                    storyItemArrayList.add(storyItem);
+                }
+                storyListAdpater = new StoryListAdpater(storyItemArrayList);
+                listView.setAdapter(storyListAdpater);
+                swipeContainer.setRefreshing(false);
+            }
+        });
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        seekBar.getProgressDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+        seekBar.getThumb().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+
+
 
         fab = (FloatingActionButton) findViewById(R.id.EditStory);
         fab.setOnClickListener(new View.OnClickListener() {
