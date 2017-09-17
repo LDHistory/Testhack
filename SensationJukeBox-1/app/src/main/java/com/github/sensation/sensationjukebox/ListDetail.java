@@ -143,17 +143,13 @@ public class ListDetail extends AppCompatActivity {
                 }
 
                 storyItemArrayList = new ArrayList<StoryItem>();
-
-                for(int userlist = 0; userlist < jsoncount; userlist++){
+                for(int userlist = jsoncount-1; userlist > 0; userlist--){
+                //for(int userlist = 0; userlist < jsoncount; userlist++){
                     StoryItem storyItem = new StoryItem();
                     storyItem.setSongName(String.valueOf(musicname[userlist]));
                     storyItem.setStoryTitle(String.valueOf(storysub[userlist]));
                     storyItem.setStoryContent(String.valueOf(storycontent[userlist]));
-                    if (userlist == 2) {
-                        storyItem.setUri(music3);
-                    } else if (userlist == 0) {
-                        storyItem.setUri(music1);
-                    }
+                    storyItem.setUri(music3);
                     storyItemArrayList.add(storyItem);
                 }
                 storyListAdpater = new StoryListAdpater(storyItemArrayList);
@@ -262,16 +258,12 @@ public class ListDetail extends AppCompatActivity {
 
         storyItemArrayList = new ArrayList<StoryItem>();
 
-        for(int userlist = 0; userlist < jsoncount; userlist++){
+        for(int userlist = jsoncount-1; userlist > 0; userlist--){
             StoryItem storyItem = new StoryItem();
             storyItem.setSongName(String.valueOf(musicname[userlist]));
             storyItem.setStoryTitle(String.valueOf(storysub[userlist]));
             storyItem.setStoryContent(String.valueOf(storycontent[userlist]));
-            if (userlist == 2) {
-                storyItem.setUri(music3);
-            } else if (userlist == 0) {
-                storyItem.setUri(music1);
-            }
+            storyItem.setUri(music3);
             storyItemArrayList.add(storyItem);
         }
         storyListAdpater = new StoryListAdpater(storyItemArrayList);
