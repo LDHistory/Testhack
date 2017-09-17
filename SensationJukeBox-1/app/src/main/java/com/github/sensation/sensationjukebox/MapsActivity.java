@@ -341,7 +341,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 e.printStackTrace();
             }
 
-            top3TV.setText(top3_music[0]+"\n"+top3_music[1]+"\n"+top3_music[2]+"\n");
+            top3TV.setText( "\n" + "1등 : " + top3_music[0]+"\n"+"2등 : " + top3_music[1]+"\n"+ "3등 : " + top3_music[2]+"\n");
         }
         @Override
         protected String doInBackground(String... params)
